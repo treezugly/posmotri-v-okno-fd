@@ -9,11 +9,14 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -37,6 +40,39 @@ ol {
   list-style: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/*  ПО- СМОТРИ В ОКНО  */
+.title {
+  /*Загловок ПО- СМОТРИ В ОКНО*/
+  display: block;
+  margin-right: 45px;
+  padding-bottom: 22px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  /*  Отвечает за ПО-. Стилизуем его другим цветом  */
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -47,5 +83,363 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 1140px;
+  margin: 133px 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.content__list-container {
+  /* ТУТ МОЖНО РЕГУЛИРОВАТЬ ОТСТУП К КНОПКЕ "ПОКАЗАТЬ ЕЩЕ"  
+  А также задавать расстояние скролл-бару */
+  height: 298px;
+  overflow-y: visible;
+  overflow-x: hidden;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  position: relative;
+}
+
+.content__details {
+  /*Тут меняем положение всего второго блока, НАДО РАЗОБРАТЬСЯ!!! */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 65px;
+  position: relative;
+  right: 19px;
+}
+
+.search-form {
+  /*Город  Время суток*/
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+.search-form__submit-button {
+  /*кнопка НАЙТИ*/
+  margin-top: auto;
+  height: 100%;
+  position: relative;
+  width: 194px;
+  align-self: center;
+}
+
+.search-form__fieldset {
+  text-wrap: nowrap;
+}
+
+.result__video-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  /*нужно задать высоту*/
+}
+
+.result__video {
+  /*Размеры видео*/
+  width: 711px;
+  height: 386px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.content__list {
+  /*Весь блок с контентом*/
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.content__list-item {
+  /*отдельно карточки*/
+  display: flex;
+}
+
+.content__video-card {
+  /*меняем позиционирование видео*/
+  display: flex;
+  flex-direction: row;
+  width: 390px;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.content__video-card-thumbnail {
+  height: 103px;
+  width: 194px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-description-container {
+  /* div с заголовком и описанием карточки */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+  width: 196px;
+  max-height: 103px;
+}
+
+.content__video-card-title {
+  /*Заголовок карточки - Дубай - Белгород - Москва*/
+  text-overflow: ellipsis; /*Добавили троеточие*/
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 6px;
+  white-space: normal;
+}
+.content__video-card-description {
+  /*Описание карточки - Ночной белгород - Дневной дубай*/
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 16.2px;
+  color: #fff;
+}
+
+.search-form__fieldset-title {
+  /*Город - время суток*/
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  padding-bottom: 4px;
+}
+
+.content__card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.content_video-card-thumbnail {
+  width: 194px; /* фиксированная ширина */
+}
+
+.search-form__checkbox-list {
+  /*УТРО ДЕНЬ НОЧЬ*/
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.search-form__textfield {
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  appearance: none;
+  white-space: normal;
+  width: auto;
+  padding: 2.5px 0px;
+  font-family: inherit;
+  font-size: 18px;
+  width: 225px;
+  height: 27px;
+}
+
+.search-form__textfield::placeholder {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  padding: 1px 1px;
+  margin-right: 5px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.search-form__pseudo-checkbox:disabled {
+  content: "";
+  opacity: 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  opacity: 1;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__checkbox:focus {
+  outline: none;
+}
+
+/*.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+} 
+
+.search-form__label:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+} */
+
+.search-form__pseudo-checkbox:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.search-form__label:focus-within:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:active .search-form__label-text {
+  /*убираем подчёркивание в состоянии active*/
+  text-decoration: none;
+}
+
+.button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  min-height: 34px;
+}
+
+.more-button {
+  width: 100%;
+  max-width: 390px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link_current {
+  background-color: transparent;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  border: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 0px;
+}
+
+.button,
+.search-form__label,
+.content__card-link {
+  cursor: pointer;
 }
