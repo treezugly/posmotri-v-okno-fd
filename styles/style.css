@@ -54,7 +54,6 @@ ol {
 .title {
   /*Загловок ПО- СМОТРИ В ОКНО*/
   display: block;
-  margin-right: 45px;
   padding-bottom: 22px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
@@ -65,11 +64,6 @@ ol {
 
 .content__accent {
   /*  Отвечает за ПО-. Стилизуем его другим цветом  */
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 94%;
-  text-transform: uppercase;
   opacity: 0.4;
 }
 
@@ -87,18 +81,20 @@ ol {
 }
 
 .content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 1140px;
-  margin: 133px 30px;
+  margin: 0px;
 }
 
 .result {
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
+  /*margin-right: 30px;*/ /*в гридах заменил на gap*/
 }
 
 .search-form {
@@ -106,7 +102,7 @@ ol {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .search-form__fieldset {
@@ -118,7 +114,7 @@ ol {
   А также задавать расстояние скролл-бару */
   height: 298px;
   overflow-y: visible;
-  overflow-x: hidden;
+  overflow-x: auto;
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
@@ -127,7 +123,6 @@ ol {
   position: relative;
   margin-bottom: 10px;
   margin-left: 2px;
-  position: relative;
 }
 
 .content__details {
@@ -138,13 +133,8 @@ ol {
   flex-direction: column;
   padding-bottom: 65px;
   position: relative;
-  right: 19px;
-}
-
-.search-form {
-  /*Город  Время суток*/
-  align-items: flex-end;
-  flex-wrap: nowrap;
+  margin: 0px;
+  padding-right: 3px;
 }
 
 .search-form__submit-button {
@@ -213,7 +203,6 @@ ol {
   flex-grow: 1;
   min-width: 0;
   width: 196px;
-  max-height: 103px;
 }
 
 .content__video-card-title {
@@ -303,11 +292,6 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 100%;
   color: rgb(255 255 255 / 0.7);
 }
 
@@ -355,19 +339,9 @@ ol {
   outline: none;
 }
 
-/*.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-} 
-
-.search-form__label:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-} */
-
-.search-form__pseudo-checkbox:active {
+.search-form__label:active .search-form__pseudo-checkbox::after {
+  opacity: 1;
   background-color: #545050;
-  text-decoration: none;
 }
 
 .search-form__label:focus-within:has(.search-form__checkbox:focus-visible) {
@@ -417,6 +391,7 @@ ol {
 }
 
 .content__card-link_current {
+  /* Я не смог найти в фигме состояние ссылок :( Посмотрел и Белгород и Воронеж(Воронеж выбран в фигме) */
   background-color: transparent;
 }
 
